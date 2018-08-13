@@ -18,6 +18,9 @@
     "paths": {
       "@/*": [
         "src/*"
+      ],
+      "neuets": [
+        "node_modules/@vueneue/ssr-core/neuets"
       ]
     },
     "lib": [

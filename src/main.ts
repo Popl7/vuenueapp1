@@ -1,13 +1,18 @@
+import "neuets";
+import "neuets";
 import Vue from "vue";
 import App from "./App.vue";
-import router from "./router";
-import store from "./store";
-import "./registerServiceWorker";
+
+if (process.client) {
+  require("./registerServiceWorker");
+}
 
 Vue.config.productionTip = false;
 
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount("#app");
+export default ({ router, store }: any) => {
+  return new Vue({
+    router,
+    store,
+    render: h => h(App)
+  });
+};
